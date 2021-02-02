@@ -1,0 +1,248 @@
+  <!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>UserLogin</title> 
+      <!-- Latest compiled and minified CSS -->
+	 
+	 
+	  <script type ="text/javascript">
+
+		function validation()
+		{
+		   
+		//    var uid = document.getElementById('uid').value;
+		//    var fname = document.getElementById('fname').value;
+		//    var lname = document.getElementById('lname').value;
+		//    var pno = document.getElementById('pno').value;
+		   var email = document.getElementById('emailId').value;
+		   var pass = document.getElementById('password').value;
+		   
+		//    if(uid ==""){
+		// 		document.getElementById('userid').innerHTML = " **please enter the userid";
+		// 		return false;
+		//    }
+		   
+		//    if((uid.length <=4)||(pass.length >6)){
+		// 	document.getElementById('userid').innerHTML = " **password length should be in between 4 to 6 ";
+		// 		return false;
+		//    }
+		   
+		   
+		//    if(fname ==""){
+		// 		document.getElementById('firstname').innerHTML = " **please enter the first name";
+		// 		return false;
+		//    }
+		   
+		//    if(!isNaN(fname)){
+		// 	  document.getElementById('firstname').innerHTML = " **only characters are allowed";
+		// 	   return false;
+		//    }
+	   
+		   
+		//    if(lname ==""){
+		// 		document.getElementById('lastname').innerHTML = " **please enter the last name";
+		// 		return false;
+		//    }
+		   
+		//    if(!isNaN(lname)){
+		// 	  document.getElementById('lastname').innerHTML = " **only characters are allowed";
+		// 	   return false;
+		//    }
+		   
+		   
+		//    if(pno ==""){
+		// 		document.getElementById('phoneno').innerHTML = " **Please fill the Phone name field";
+		// 		return false;
+		//    }
+		//    if(isNaN(pno)){
+		//    document.getElementById('phoneno').innerHTML = " **character not allowed Enter only digits";
+		// 	return false;
+		//    }
+		   
+		//    if(pno.length!=10){
+		//    document.getElementById('phoneno').innerHTML = " **Phone no must be in 10 dight only";
+		// 	return false;
+		//    }
+		   
+		   
+		   if(emailId ==""){
+				document.getElementById('emailid').innerHTML = " **Please enter the email id";
+				return false;
+		   
+		   }
+		   if(emailId.indexOf('@') <= 0){   
+			   document.getElementById('emailId').innerHTML = " **invalid '@' position";
+				return false;
+		   }
+		   
+		   if((emailId.charAt(email.length-4)!='.')&&(emailId.charAt(email.length-3)!='.')){
+		   
+		   document.getElementById('emailId').innerHTML = " ** invalid ' . ' position";
+				return false;
+		   
+		   }
+		   
+		   if(password ==""){
+				document.getElementById('password').innerHTML = " **Please fill the password  field";
+				return false;
+		   
+		   }
+		   
+		   if((password.length <=4)||(password.length >8)){
+			document.getElementById('password').innerHTML = " **password length should be in between 4 to 8 ";
+				return false;
+		   }
+		   
+		}
+		
+   </script>
+	 
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+     <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     </head>
+<body>
+    <a routerLink=""><b>Home</b></a>
+    <div class="container mt-3">
+        <h1 align="center">Login Form</h1>
+        <div class="col-lg-4 m-auto d-block"> 
+			<!-- (ngSubmit)="login(loginForm)" -->
+		 
+	 <form #loginForm="ngForm" [formGroup]="loginform" onsubmit="return validation()">
+            <div class="form-group">
+				<br>
+                <label for="email"><b>Email Id</b></label> <br>
+				<input type="text" class="form-control" id="email" formControlName="email" placeholder="Enter Your Email"
+				style="width: 1000px;">
+                <span id="emailId" class="text-danger font-weight-bold"></span>
+                
+            </div>
+			<div class="form-group">
+                <label>Password</label>
+				<input type="text" class="form-control" id="pass" formControlName="pass" placeholder="Enter Your Password"
+				style="width: 1000px;">
+				<span id="password" class="text-danger font-weight-bold"></span>
+            </div>
+			<div class="form-group">
+                <label>Type</label> &nbsp;
+      			<select formControlName="type" id="type">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+                <!-- <option value="Doctor">Doctor</option> -->
+                </select>
+            </div>
+			
+             
+            <div>
+			<button class="btn btn-primary" type="submit" value="login">Login</button>&nbsp;&nbsp;
+			<button class="btn btn-danger" type="reset" value="reset">Reset</button> &nbsp;
+			
+			</div>
+			&nbsp;
+			<div>
+				No Account? &nbsp;&nbsp;<a routerLink="/register"><b>Register Now</b></a>
+		 </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html> 
+<!-- <script type ="text/javascript">
+
+     function validation()
+	 {
+	    
+	    var uid = document.getElementById('uid').value;
+	    var fname = document.getElementById('fname').value;
+		var lname = document.getElementById('lname').value;
+		var pno = document.getElementById('pno').value;
+		var email = document.getElementById('email').value;
+		var pass = document.getElementById('pass').value;
+		
+		if(uid ==""){
+		     document.getElementById('userid').innerHTML = " **please enter the userid";
+			 return false;
+		}
+		
+		if((uid.length <=4)||(pass.length >6)){
+		 document.getElementById('userid').innerHTML = " **password length should be in between 4 to 6 ";
+			 return false;
+		}
+		
+		
+		if(fname ==""){
+		     document.getElementById('firstname').innerHTML = " **please enter the first name";
+			 return false;
+		}
+		
+		if(!isNaN(fname)){
+	       document.getElementById('firstname').innerHTML = " **only characters are allowed";
+		    return false;
+		}
+	
+		
+		if(lname ==""){
+		     document.getElementById('lastname').innerHTML = " **please enter the last name";
+			 return false;
+		}
+		
+		if(!isNaN(lname)){
+	       document.getElementById('lastname').innerHTML = " **only characters are allowed";
+		    return false;
+		}
+		
+		
+		if(pno ==""){
+		     document.getElementById('phoneno').innerHTML = " **Please fill the Phone name field";
+			 return false;
+		}
+		if(isNaN(pno)){
+	    document.getElementById('phoneno').innerHTML = " **character not allowed Enter only digits";
+         return false;
+		}
+		
+		if(pno.length!=10){
+	    document.getElementById('phoneno').innerHTML = " **Phone no must be in 10 dight only";
+         return false;
+		}
+		
+		
+		if(email ==""){
+		     document.getElementById('emailid').innerHTML = " **Please enter the email id";
+			 return false;
+		
+		}
+		if(email.indexOf('@') <= 0){   
+		    document.getElementById('emailid').innerHTML = " **invalid '@' position";
+			 return false;
+		}
+		
+		if((email.charAt(email.length-4)!='.')&&(email.charAt(email.length-3)!='.')){
+		
+		document.getElementById('emailid').innerHTML = " ** invalid ' . ' position";
+			 return false;
+		
+		}
+		
+		if(pass ==""){
+		     document.getElementById('password').innerHTML = " **Please fill the password  field";
+			 return false;
+		
+		}
+		
+		if((pass.length <=4)||(pass.length >8)){
+		 document.getElementById('password').innerHTML = " **password length should be in between 4 to 8 ";
+			 return false;
+		}
+		
+	 }
+     
+</script> -->
+ 

@@ -1,0 +1,40 @@
+ul{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    align-content: inherit;
+    
+    text-align: center;
+}
+
+li{
+    float:none;
+    text-align: center;
+}
+
+li a,img,p{
+    display: inline-block;
+    color:darkblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:lightblue;
+}
+
+img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+li a:hover{
+    background-color:darkgray;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+li div{
+    background-color: gray;
+    margin-top: 10px;
+}

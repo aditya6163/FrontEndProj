@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: gray; */
+}
+/*
+body{
+  color: black;
+  background-color:silver;
+  margin-left:21px;
+  margin-right:21px;
+  
+  }
+*/
+
+.mainbar{
+  /*
+    width: 90%;
+    height: 190px;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+*/
+    width: 75%;
+    height: 190px;
+    position: fixed;
+    left: 50%;
+    top: 60%;
+
+    transform: translate(-50%, -50%);
+    background-image: url('https://www.indiaeducation.net/imagesvr_ce/8982/iStock_000009819502Small.jpg');
+    background-size: 50% 50%;
+    box-shadow: 1px 2px 10px 5px red;
+    animation: slider 9s infinite linear;
+    
+}
+
+@keyframes slider{
+    0%{ background-image: url('https://www.indiaeducation.net/imagesvr_ce/8982/iStock_000009819502Small.jpg') }
+
+    25%{ background-image: url('https://www.thesprucepets.com/thmb/LjhdetAYKQ0WiFsV5-NjyHZ4SRQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/RobertDaly-Caiaimage-GettyImages-166273072-58a4b6a35f9b58819c02bbd7.jpg') }
+
+    45%{ background-image: url('https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1420hD.img?h=416&w=799&m=6&q=60&u=t&o=f&l=f') }
+    
+}
